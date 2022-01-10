@@ -84,7 +84,7 @@ gulp.task('styles:v', function() {
 
  // Main CSS
 gulp.task('styles', function() {
-  return gulp.src([paths.src_css_fe + 'style.scss'])
+  return gulp.src([paths.scripts.src_css_fe + 'style.scss'])
     .pipe(plumber({errorHandler: onError}))
     .pipe(sourcemaps.init())
     .pipe(sass({ includePaths : paths.node_libs, style: 'expanded', errLogToConsole: true }))
@@ -145,13 +145,13 @@ gulp.task('default', [ 'clean', 'styles:v', 'styles', 'scripts', 'copyfonts', 'c
 gulp.task('watch', function() {
 
   // Watch .scss files
-  gulp.watch([ paths.src_css_fe + '**/*.scss'], ['styles:v', 'styles']);
+  gulp.watch([ paths.scripts.src_css_fe + '**/*.scss'], ['styles:v', 'styles']);
   // gulp.watch([ paths.src_css_fe + 'style.scss'], ['styles']);
 
   // Watch gulpfile files
   gulp.watch('gulpfile.js', ['styles', 'styles:v', 'scripts', 'copyfonts', 'copyjs']);
 
   // Watch .js files
-  gulp.watch( paths.src_js + '*.js', ['scripts']);
+  gulp.watch( paths.scripts.src_js + '*.js', ['scripts']);
 
 });
