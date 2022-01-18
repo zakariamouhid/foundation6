@@ -84,7 +84,7 @@ gulp.task('styles:v', function() {
 
  // Main CSS
 gulp.task('styles', function() {
-  return gulp.src([paths.scripts.src_css_fe + 'style.scss'])
+  return gulp.src([paths.src_css_fe + 'style.scss'])
     .pipe(plumber({errorHandler: onError}))
     .pipe(sourcemaps.init())
     .pipe(sass({ includePaths : paths.node_libs, style: 'expanded', errLogToConsole: true }))
@@ -136,22 +136,35 @@ gulp.task('clean', function(cb) {
     del([ paths.assets_font + '*', paths.assets_css + '*', paths.assets_js + '*', paths.home + 'style.+(css|css.map)'], {force: true}, cb)
 });
 
-// Default task
-gulp.task('default', [ 'clean', 'styles:v', 'styles', 'scripts', 'copyfonts', 'copyjs'], function() {
-    gulp.start('styles', 'scripts');
+gulp.task('default-fn', function () {
+gulp.start('styles', 'scripts');
 });
+
+// Default task
+gulp.task('default', gulp.series( 'clean', 'styles:v', 'styles', 'scripts', 'copyfonts', 'copyjs', 'default-fn' ));
+
+const webserver = require('gulp-webserver');
 
 // Watch
 gulp.task('watch', function() {
+  gulp.src('.')
+    .pipe(webserver({
+      // path: 'HTML',
+      livereload: true,
+      directoryListing: true,
+      open: true,
+      host: "0.0.0.0",
+      port: 8080
+    }));
 
   // Watch .scss files
-  gulp.watch([ paths.scripts.src_css_fe + '**/*.scss'], ['styles:v', 'styles']);
+  gulp.watch([ paths.src_css_fe + '**/*.scss'], gulp.series('styles:v', 'styles'));
   // gulp.watch([ paths.src_css_fe + 'style.scss'], ['styles']);
 
   // Watch gulpfile files
-  gulp.watch('gulpfile.js', ['styles', 'styles:v', 'scripts', 'copyfonts', 'copyjs']);
+  gulp.watch('gulpfile.js', gulp.series('styles', 'styles:v', 'scripts', 'copyfonts', 'copyjs'));
 
   // Watch .js files
-  gulp.watch( paths.scripts.src_js + '*.js', ['scripts']);
+  gulp.watch( paths.src_js + '*.js', gulp.series('scripts'));
 
 });

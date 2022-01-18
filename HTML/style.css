@@ -1,9 +1,9 @@
 /*
-Theme Name: Attitude HTML Template
-Theme URI: https://wplook.com/
+Theme Name: Alpha Omega Digital - Freelance wordpress web developer Melbourne
+Theme URI: https://alphaomegadigital.com.au
 Author: WPlook Themes (Victor Tihai)
-Author URI: https://wplook.com/
-Description: Attitude is HTML Template
+Author URI: https://jane-james.com.au
+Description: Custom site built with love by Alpha Omega Digital
 Version: 1.0.2
 Last Update: 08/09/2017 (d/m/y);
 
@@ -165,7 +165,7 @@ Last Update: 08/09/2017 (d/m/y);
   background: linear-gradient(142deg, rgba(215, 0, 39, 0.75), rgba(115, 0, 165, 0.75)); }
 
 .gradient-a-80 {
-  background: linear-gradient(142deg, rgba(215, 0, 39, 0.8), rgba(115, 0, 165, 0.8)); }
+  background: linear-gradient(142deg, #9c60b7, #1779ba); }
 
 .gradient-a-85 {
   background: linear-gradient(142deg, rgba(215, 0, 39, 0.85), rgba(115, 0, 165, 0.85)); }
@@ -174,10 +174,10 @@ Last Update: 08/09/2017 (d/m/y);
   background: linear-gradient(142deg, rgba(215, 0, 39, 0.9), rgba(115, 0, 165, 0.9)); }
 
 .gradient-a-95 {
-  background: linear-gradient(142deg, rgba(215, 0, 39, 0.95), rgba(115, 0, 165, 0.95)); }
+  background: linear-gradient(142deg, rgb(196 143 229 / 95%), rgb(51 68 131 / 95%)); }
 
 .gradient-a-100 {
-  background: linear-gradient(142deg, #d70027, #7300a5); }
+  background: linear-gradient(142deg, #a0c5dd, #772a99); }
 
 /* ===== gradient-b -> gradient-b-95 ===== */
 .gradient-b-10 {
@@ -2202,7 +2202,7 @@ section.schedule .tabs-title .date {
   margin-top: 5px; }
 
 section.schedule.gradient-a .tabs-title a[aria-selected='true'] .day-number {
-  background: -webkit-linear-gradient(142deg, #d70027, #7300a5);
+  background: -webkit-linear-gradient(142deg, #0066cc, #7300a5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
@@ -3145,6 +3145,7 @@ ul.accordion.custom.minimal li.accordion-item {
     overflow: hidden; }
     .project-item figure.effect-project img {
       max-width: 100%;
+      padding: 20px;
       -webkit-transition: all 0.3s;
       transition: all 0.3s; }
   .project-item figcaption {
