@@ -1,6 +1,6 @@
-# Attitude HTML
+# Alpha Omega Digital HTML
 
-_WPlook Studio HTML Template_
+Alpha Omega Digital HTMl template
 
 Information for developers
 ---
