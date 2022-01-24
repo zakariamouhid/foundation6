@@ -63,9 +63,9 @@ var paths = {
      node_libs: ['./node_modules/foundation-sites/scss/', './node_modules/motion-ui/src'],
     };
 
-var onError = function(err) {
-         console.log(err);
-    }
+function onError(err) {
+  console.log(err);
+}
 
  // Vendors, Admin CSS
 gulp.task('styles:v', function() {

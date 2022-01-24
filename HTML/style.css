@@ -214,7 +214,7 @@ Last Update: 08/09/2017 (d/m/y);
   background: linear-gradient(142deg, rgba(42, 8, 69, 0.6), rgba(100, 65, 165, 0.6)); }
 
 .gradient-b-65 {
-  background: linear-gradient(142deg, rgba(42, 8, 69, 0.65), rgba(100, 65, 165, 0.65)); }
+  background: linear-gradient(142deg, #6441a5,#BC84D5); }
 
 .gradient-b-70 {
   background: linear-gradient(142deg, rgba(42, 8, 69, 0.7), rgba(100, 65, 165, 0.7)); }
@@ -2515,7 +2515,9 @@ section.team.gray {
 section.welcome {
   z-index: 1;
   position: relative;
-  background: #f0f4f7;
+  background: linear-gradient(
+    142deg
+    , #6441a5,#BC84D5);
   padding-top: 100px;
   /* ===== Small only ===== */ }
   section.welcome .top-negative {
@@ -5257,5 +5259,9 @@ ul.accordion.custom.minimal li.accordion-item {
 .fr-window-skin-fresco.fr-no-svg.fr-thumbnails-vertical .fr-thumbnails-side-next .fr-thumbnails-side-button-disabled .fr-thumbnails-side-button-icon,
 .fr-window-skin-fresco.fr-no-svg.fr-thumbnails-vertical .fr-thumbnails-side-next:hover .fr-thumbnails-side-button-disabled .fr-thumbnails-side-button-icon {
   background-position: -377px -91px; }
-
+  
+  /* added CSS */
+  .jane-img {
+    width: 60%;
+  }
 /*# sourceMappingURL=style.css.map */
