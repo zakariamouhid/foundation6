@@ -56,13 +56,14 @@ var autoprefixerOptions = {
 
 var paths = {
      home: './dist/',
+     assets_images: ['HTML/assets/images/**/*', 'HTML/assets/svg/**/*'],
      assets_css: './dist/assets/styles/',
      assets_js: './dist/assets/javascripts/',
      assets_font: './dist/assets/fonts/',
      src_css_fe: './HTML/src/sass/',
      src_js: './HTML/src/javascripts/',
      node_libs: ['./node_modules/foundation-sites/scss/', './node_modules/motion-ui/src'],
-    };
+  };
 
 var onError = function(err) {
          console.log(err);
@@ -115,7 +116,7 @@ gulp.task('copyhtml', function () {
 });
 
 gulp.task('copyimages', function () {
-  return gulp.src('./HTML/assets/images/**/*', {
+  return gulp.src(paths.assets_images, {
     base: 'HTML'
   })
     .pipe(gulp.dest(paths.home))
@@ -187,6 +188,6 @@ gulp.task('watch', function() {
 
   gulp.watch( [ './HTML/**/*.html' ], gulp.series('copyhtml') );
 
-  gulp.watch( [ './HTML/assets/images/**/*' ], gulp.series('copyimages') );
+  gulp.watch( paths.assets_images, gulp.series('copyimages') );
 
 });
