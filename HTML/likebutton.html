@@ -62,38 +62,67 @@
 				</div>
 			</header><!-- #masthead .site-header -->
 
-	<!-- Teaser -->
-	<section class="grid-y teaser" style="background-image: url('assets/images/officedark.jpg'); min-height: 40vh;">
-		<div class="cell auto gradient-f-85">
-			<div class="teaser-content heading" style="padding-top: 16vh;">
-				<!-- Post Title -->
-				<h1 class="text-center">Contact</h1>
-	
-			</div>
-		</div>
-	</section><!-- Teaser -->
-
+			<!-- Teaser -->
+			<article itemscope="" itemtype="https://schema.org/BlogPosting" class="single-post-article">	
+				<section class="grid-y teaser" style="background-image: url('assets/images/officedark.jpg'); min-height: 60vh;">
+					<div class="cell auto gradient-a-75">
+						<div class="teaser-content heading" style="padding-top: 20vh;">
+							<!-- Publication date -->
+							<p class="publication-date text-center">
+								<time datetime="2017-04-25T19:02:42+00:00">October 04, 2021</time>
+							</p>
+							<!-- Post Title -->
+							<h1 class="text-center">Add a like button to your blog posts in Wordpress using PHP and JS
+                            </h1>
+							<!-- Post Category -->
+							<h3 class="category text-center">Wordpress Development</h3>
+							<!-- Post Author -->
+							<div class="author text-center">
+								<span data-tooltip aria-haspopup="true" class="avatar has-tip top" data-disable-hover="false" tabindex="2" title="By Jane James">
+									<a href="#"><img src="assets/images/general/Jane-James-48-1-bw-web.jpg" alt="Jane James"></a>
+								</span>
+							</div>
+							
+						</div>
+					</div>
+				</section><!-- Teaser -->
 
 				<div class="grid-container grid-container-padded">
 					<div class="grid-x grid-padding-x align-center">
-						<div class="cell medium-12 medium-centered">
+						<div class="cell medium-9 medium-centered">
 							<div class="article-body">
-	
-								<div class="grid-x align-center">
-									<div class="cell medium-9 medium-centered" style="margin-top: 3em">
-										<h4 class="subheader text-center">My greatest passion is to help business owners increase their web presence and sales. Do you think we’d be a good fit?</h4>
-									</div>
-								</div>
-								<br />
+								<p class="lead">
+                                    This week I had a client request a modification to an existing WordPress page template which already had two post anchor identifiers to retrieve get_the_author_meta and get_the_date. It was a custom template that displays a CPT by category to a page.</p>
+                                    <p>So I found this repository on Github by Jon Masters and decided to implement it, but modifying the custom post type template instead of the standard blog page template.</p>
+<p>Jon gives walkthrough instructions, but since I modified it for a custom post type template I will do my own walkthrough, in case you are looking to modify a CPT template as well.</p>
+<h4>1. Run Query monitor to find the template file you are after</h4>
+<p>If you install the Query Monitor plugin, you can click on ‘templates’ to see which WordPress template file is being called in. It’s not perfect though. In this case, it showed me a template hierarchy of 5 template files, none of which contained the section I wished to modify. If this happens, then you can just dig around through the template files and if the naming convention is obvious you shouldn’t have too much trouble. In this case I was editing the header-insight.php</p>
+   <h4>2. Open your functions file and add the post-like.php file code</h4>
+   <p>Ok, this will make your functions file enormously long, but since Jon has shared the code I am going with what he as built for us already. Of course you can refactor that code into a post-like.php template file and call it into your functions file, but let’s keep it simple and add the post-like.php into functions.php like so:</p>          
+   <script src="https://gist.github.com/genesis16/184494fad656fb55aa08216cf2232701.js"></script>
+   <h4>3. Change theme name</h4>      
+   <p>In the pile of code we just added to functions.php go hit control F, and replace “YourThemeTextDomain” with your theme name. This isn’t necessary but I think it makes your code clearer to read.</p>                
+   <h4>4. Add the javascript file to your library</h4>
+   <p>Add this javascript to your theme/lib/js/simple-likes-public.js path and save. Here’s the code to save you time:</p>  
+   <script src="https://gist.github.com/genesis16/2ee8b7bdbb7e91e3d494b0826ec2db63.js"></script>
+   <h4>Add the likes function within the loop of your template file</h4>                
+   <p>Now we are going to go into our template file, in my case it’s header-insights.php and find the section where the GET parameters that are already calling in the author and the date, and we are going to echo in our function here:</p> 
+   <img src="assets/images/blog/simplelikestemplate.jpg" alt="Simple likes template"><br /><br />     
+   <h4> 5. Go to your page template and click your like button</h4>
+   <p>Now we’re going to go to our post template file, refresh the page and see if our like button is working. If you click and un-click the button, the heart will turn on and off which is correct. The way the function is setup, it only allows one user to like a post by calling your IP address into the wp_postmeta table in SQL, so for example you cannot publish a post and click like a hundred times to look really cool, LOL. </p>    <br></br> 
+                                                <div class="sharethis-inline-share-buttons"></div><br /><br />
+                                                <em>Alpha Omega Digital is a WordPress agency based in Melbourne, Australia but also services clients from Sydney, Brisbane, Newcastle, Perth, Adelaide, Darwin and Hobart. Have a project in mind? Contact me <a href="contact.html">here.</a></em>
+								
+
+			
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="_form_1"></div><script src="https://alphaomegadigital.activehosted.com/f/embed.php?id=1" type="text/javascript" charset="utf-8"></script>
+			</article>
+		</div><!-- #main -->
 
-			
-
-			<!-- Footer Section -->
+		<!-- Footer Section -->
 	<footer id="colophon" class="site-footer gradient-b-95 white-text-color" role="contentinfo">
 		<div class="site-info">
 			<div class="grid-container grid-container-padded">
@@ -179,6 +208,7 @@
 	</footer><!-- .site-footer -->
 	</div>
 	<!-- JavaScripts -->
+	<script src="assets/javascripts/vendor.min.js"></script>
 	<script src="assets/javascripts/main.min.js"></script>
 </body>
 </html>

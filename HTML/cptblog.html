@@ -13,7 +13,6 @@
 	<script src="assets/javascripts/vendor.min.js"></script>
 	<script src="assets/javascripts/typed.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700|Poppins:300,400,500,600,700&amp;subset=devanagari,latin-ext" rel="stylesheet">
-    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=61eb3b08539bcd001929d67b&product=inline-share-buttons" async="async"></script>
 </head>
 <body>
 	<div id="page" class="hfeed site boxed-page-full"> <!-- In order to make the page boxed, you can apply 1. boxed-page-1280, 2. boxed-page-1400, 3. boxed-page-1600 or boxed-page-1920 -->
@@ -28,7 +27,7 @@
 								<span class="title-bars float-left" data-responsive-toggle="top-main-menu" data-hide-for="medium">
 									<i class="fa fa-bars" aria-hidden="true" data-toggle="top-main-menu"></i>
 								</span>
-								<a href="aod-index.html">
+								<a href="index.html">
 									<img class="logo-header" alt="Alpha Omega Digital" src="assets/images/1925_logo-03.png"
 									width="100" height="50">
 							</div>
@@ -42,7 +41,7 @@
 							<div class="small-12 medium-8 cell">
 								<nav class="primary navigation">
 								   <ul id="top-main-menu" class="expanded" data-magellan>
-									   <li><a href="aod-index.html">Home</a>
+									   <li><a href="index.html">Home</a>
 	   
 									   </li>
 									   <li><a href="about.html">About</a>
@@ -50,6 +49,8 @@
 									   <li><a href="projects.html">Projects</a>
 									   </li>
 										<li><a href="blog.html">Blog</a>
+										</li>
+										<li><a href="faq.html">FAQ</a>
 										</li>
 										<li><a href="casestudy.html">Case Study</a></li>
 									</ul>
@@ -60,85 +61,6 @@
 					</div>
 				</div>
 			</header><!-- #masthead .site-header -->
-
-			<!-- Teaser -->
-			<article itemscope="" itemtype="https://schema.org/BlogPosting" class="single-post-article">	
-				<section class="grid-y teaser" style="background-image: url('assets/images/officedark.jpg'); min-height: 60vh;">
-					<div class="cell auto gradient-a-75">
-						<div class="teaser-content heading" style="padding-top: 20vh;">
-							<!-- Publication date -->
-							<p class="publication-date text-center">
-								<time datetime="2017-04-25T19:02:42+00:00">December 14, 2021</time>
-							</p>
-							<!-- Post Title -->
-							<h1 class="text-center">Can you have multiple page templates for custom post types in WordPress?
-                            </h1>
-							<!-- Post Category -->
-							<h3 class="category text-center">Wordpress Development</h3>
-							<!-- Post Author -->
-							<div class="author text-center">
-								<span data-tooltip aria-haspopup="true" class="avatar has-tip top" data-disable-hover="false" tabindex="2" title="By Jane James">
-									<a href="#"><img src="assets/images/general/Jane-James-48-1-bw-web.jpg" alt="Jane James"></a>
-								</span>
-							</div>
-							
-						</div>
-					</div>
-				</section><!-- Teaser -->
-
-				<div class="grid-container grid-container-padded">
-					<div class="grid-x grid-padding-x align-center">
-						<div class="cell medium-9 medium-centered">
-							<div class="article-body">
-                                <img src="assets/images/blog/CPT-event-template-1200x501.png" alt="CPT template"><br /><br />
-								<p class="lead">
-                                    I recently came across an issue on a client project, and that was: the requirement to create multiple templates for a CPT or custom post type.</p>
-                                    
-                                    <blockquote>But first: What is a custom post type?</blockquote>
-                                    <p>Custom post types are specific, custom code-added posts that allow you to edit your wordpress site easily using custom fields and taxonomies.<br></br> For example: You might want a section for members of the team and add them in different ways on their own page or list inside of WordPress itself with no need go through complicated editing processes every time someone joins/leaves- just edit one place!<br></br> 
-                                    
-                                    Custom post types are a great way for marketers and site managers alike to add new functionality without having to edit template files, which should strictly be done by a WordPress developer.<br></br> 
-                                    
-                                    First, let’s define what Custom Post Types are, how taxonomies are used, and how they integrate with ACF:</p>
-                                    <h5>Custom Posts</h5>
-                                    <p>Custom Post types allow you to create a new admin interface for managing content, media, functionality, and you can also create a custom filter or use a plugin to allow you to search by taxonomies.<br></br> The main benefit a business gets by having custom post types is using different page templates, for each CPT. For example a book store may have custom post types, sorted by category of fiction, non-fiction, children’s and cooking.<br></br> This means the user of the site can search and filter by these categories. It also means a custom template file can be created for each category- meaning you have a base design and configuration for each category without having to design a page from scratch
-                                    </p>
-                                    <h5>Categories</h5>
-                                    <p>The categories are a great way to organise your posts, depending on what you have activated in the theme. <br></br> Categories can be used for organising your menu into category pages and displaying them by listing all of their content by for example a category of cooking. <br></br> Once you have multiple categories setup as CPT, you can click on the category eg: cooking, and see every post with that category without having to trawl through the website or use WordPress default search function by keyword.<br></br> 
-                                        <h5>Advanced Custom Fields</h5>
-                                        <p>Custom fields are a great way to add additional information you want that can be used later in your theme.<br></br> In our book store example, custom fields allow you to add more information about your book post such as its author or qualifications, which could also add to your search and filter function.
-                                         Now that we have cleared that up, let’s go back to the headline of this article which is how to have multiple custom post type templates.</p>
-                                        <p>You can also add tags to your content which are searchable, as you normally would with WordPress posts. Categories and tags are known as taxonomies in WordPress.
-                                        
-                                        </p>
-                                        <h2>How to use multiple custom post type templates in WordPress</h2>
-                                        <p>When creating a new CPT, WordPress will search for the CPT template file that it will use for each category, and this is declared in your template files like so:
-
-                                        </p>
-                                        <script src="https://gist.github.com/genesis16/7a1df9b40fb5a4e0f06dd8b35a62bff9.js"></script>
-                                        <p>For this example, we are using a custom post type category of events. WordPress will search for a template file with the template post type of ‘event’, and use that template to display your event page.
-
-                                            When you have only one template file, your CPT backend looks like this:</p>
-                                            <img src="assets/images/blog/onetemplate.png" alt="CPT template"><br /><br />
-                                            <p>You can see on the right hand side there is no option to select a different template file, like you usually have when you are creating a new page.<br></br> This is because we only have one template file in use for the CPT with category of event.<br></br>
-
-                                                So, we need to create another template file for the category of event, and we will have two template files to choose from.<br></br>
-                                                
-                                                The reason for doing this is the current event template is built in CSS Grid, which is not user friendly for the marketing manager who wants to use it and doesn’t know CSS.<br></br> She wants a standard WordPress template, so I have copied the content of my page.php file from my parent theme, and into a new template file called vendor-event.php, which means we have a second event template for her to use with the usual WordPress page layout.<br></br> Here is the code I used:</p>
-                                                <script src="https://gist.github.com/genesis16/2275619ced9a7956b0bfab7609dbd18f.js"></script>
-                                                <p>After you have created your second CPT template file, you can go to your CPT category in your dashboard – in this case event, click on ‘add new’ and now you can see there are two template files to choose from before you build your new page- one in CSS Grid and one in Flexbox.</p>
-                                                <img src="assets/images/blog/vendorevent.png" alt="CPT template"><br /><br />
-                                                <div class="sharethis-inline-share-buttons"></div><br /><br />
-                                                <p>Alpha Omega Digital is a WordPress agency based in Melbourne, Australia but also services clients from Sydney, Brisbane, Newcastle, Perth, Adelaide, Darwin and Hobart. Have a project in mind? Contact me <a href="contact.html">here.</a></p>
-								
-
-			
-							</div>
-						</div>
-					</div>
-				</div>
-			</article>
-		</div><!-- #main -->
 
 		<!-- Footer Section -->
 	<footer id="colophon" class="site-footer gradient-b-95 white-text-color" role="contentinfo">
