@@ -44,28 +44,29 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename'),
     rigger = require('gulp-rigger'),
-    sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify');
 
+var sass = require('gulp-sass')(require('node-sass'));
+
 var autoprefixerOptions = {
-  browsers: ['last 2 version']
+  
 };
 
 
 var paths = {
-     home: './',
-     assets_css: './assets/styles/',
-     assets_js: './assets/javascripts/',
+     home: './HTML/',
+     assets_css: './HTML/assets/styles/',
+     assets_js: './HTML/assets/javascripts/',
      assets_font: './assets/fonts/',
-     src_css_fe: './src/sass/',
-     src_js: './src/javascripts/',
+     src_css_fe: './HTML/src/sass/',
+     src_js: './HTML/src/javascripts/',
      node_libs: ['./node_modules/foundation-sites/scss/', './node_modules/motion-ui/src'],
     };
 
-function onError(err) {
-  console.log(err);
-}
+var onError = function(err) {
+         console.log(err);
+    }
 
  // Vendors, Admin CSS
 gulp.task('styles:v', function() {
@@ -79,7 +80,7 @@ gulp.task('styles:v', function() {
     .pipe(cleancss())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.assets_css))
-    .pipe(notify({ message: 'Styles task complete: <%= file.relative %>!' }));
+    // .pipe(notify({ message: 'Styles task complete: <%= file.relative %>!' }));
 });
 
  // Main CSS
@@ -92,25 +93,25 @@ gulp.task('styles', function() {
     //.pipe(cleancss())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.home))
-    .pipe(notify({ message: 'Styles task complete: <%= file.relative %>!' }));
+    // .pipe(notify({ message: 'Styles task complete: <%= file.relative %>!' }));
 });
 
 // Scripts
 gulp.task('scripts', function() {
   return gulp.src( paths.src_js + '*.js')
-    .pipe(rigger())
+    // .pipe(rigger())
     .pipe(gulp.dest(paths.assets_js))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
     .pipe(gulp.dest(paths.assets_js))
-    .pipe(notify({ message: 'Scripts task complete: <%= file.relative %>!' }));
+    // .pipe(notify({ message: 'Scripts task complete: <%= file.relative %>!' }));
 });
 
 
 gulp.task('copyfonts', function () {
     return gulp.src('./node_modules/font-awesome/fonts/*')
       .pipe(gulp.dest(paths.assets_font))
-      .pipe(notify({ message: 'Copy Fonts: <%= file.relative %>!' }));
+      // .pipe(notify({ message: 'Copy Fonts: <%= file.relative %>!' }));
 });
 
 gulp.task('copyjs', function () {
@@ -128,25 +129,26 @@ gulp.task('copyjs', function () {
 
       ])
       .pipe(gulp.dest(paths.assets_js))
-      .pipe(notify({ message: 'Copy JavaScripts: <%= file.relative %>!' }));
+      // .pipe(notify({ message: 'Copy JavaScripts: <%= file.relative %>!' }));
 });
 
 // Clean
 gulp.task('clean', function(cb) {
-    del([ paths.assets_font + '*', paths.assets_css + '*', paths.assets_js + '*', paths.home + 'style.+(css|css.map)'], {force: true}, cb)
+    return del([ paths.assets_font + '*', paths.assets_css + '*', paths.assets_js + '*', paths.home + 'style.+(css|css.map)'], {force: true}, cb)
 });
 
-gulp.task('default-fn', function () {
-gulp.start('styles', 'scripts');
+gulp.task('default-fn', async function () {
+// gulp.start('styles', 'scripts');
 });
 
 // Default task
 gulp.task('default', gulp.series( 'clean', 'styles:v', 'styles', 'scripts', 'copyfonts', 'copyjs', 'default-fn' ));
 
-const webserver = require('gulp-webserver');
 
 // Watch
 gulp.task('watch', function() {
+  /*
+  const webserver = require('gulp-webserver');
   gulp.src('.')
     .pipe(webserver({
       // path: 'HTML',
@@ -156,6 +158,7 @@ gulp.task('watch', function() {
       host: "0.0.0.0",
       port: 8080
     }));
+  */
 
   // Watch .scss files
   gulp.watch([ paths.src_css_fe + '**/*.scss'], gulp.series('styles:v', 'styles'));
