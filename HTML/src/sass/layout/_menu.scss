@@ -56,7 +56,7 @@ svg #Black path {
 
 	
 	#top-bar-attitude {
-		padding-top: 20px;
+		padding: 10px 0;
 
 		.title-bars {
 			cursor: pointer;
@@ -68,7 +68,7 @@ svg #Black path {
 		}
 
 		.title-bars {
-			margin-top: 10px;
+			margin-top: 40px;
 			margin-right: 10px;
 			i { 
 				color: $whiteColor; 
@@ -82,6 +82,7 @@ svg #Black path {
 		.action-button {
 			padding-left: 10px;
 			padding-right: 10px;
+			margin-bottom: 0;
 		}
 
 		.social-links {
@@ -109,8 +110,7 @@ svg #Black path {
 #top-main-menu {
 	float: right;
 	display: block;
-	margin: 10px 0 0 0;
-	padding-top: 20px;
+	margin: 20px 0 0 0;
 	list-style-type: none;
 
 	& > li {

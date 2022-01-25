@@ -150,7 +150,7 @@ gulp.task('copyjs', function () {
 
 // Clean
 gulp.task('clean', function(cb) {
-    return del([ paths.assets_font + '*', paths.assets_css + '*', paths.assets_js + '*', paths.home + 'style.+(css|css.map)'], {force: true}, cb)
+    return del('dist', {force: true}, cb);
 });
 
 gulp.task('default-fn', async function () {
@@ -163,19 +163,20 @@ gulp.task('default', gulp.series( 'clean', 'styles:v', 'styles', 'scripts', 'cop
 
 // Watch
 gulp.task('watch', function() {
-  const webserver = require('gulp-webserver');
-  gulp.src('dist')
-    .pipe(webserver({
-      // path: 'dist',
-      livereload: true,
-      directoryListing: true,
-      open: true,
-      host: "0.0.0.0",
-      port: 8080
-    }));
-  
   // init
-  gulp.series('default')();
+  gulp.series('default')(() => {
+    const webserver = require('gulp-webserver');
+    gulp.src('./dist')
+      .pipe(webserver({
+        // path: 'dist',
+        livereload: true,
+        // directoryListing: true,
+        open: true,
+        host: "localhost",
+        port: 8080,
+        fallback: '404.html',
+      }));
+  });
   
   // Watch .scss files
   gulp.watch([ paths.src_css_fe + '**/*.scss'], gulp.series('styles:v', 'styles'));
