@@ -58,7 +58,7 @@ var paths = {
      home: './HTML/',
      assets_css: './HTML/assets/styles/',
      assets_js: './HTML/assets/javascripts/',
-     assets_font: './assets/fonts/',
+     assets_font: './HTML/assets/fonts/',
      src_css_fe: './HTML/src/sass/',
      src_js: './HTML/src/javascripts/',
      node_libs: ['./node_modules/foundation-sites/scss/', './node_modules/motion-ui/src'],
@@ -147,7 +147,6 @@ gulp.task('default', gulp.series( 'clean', 'styles:v', 'styles', 'scripts', 'cop
 
 // Watch
 gulp.task('watch', function() {
-  /*
   const webserver = require('gulp-webserver');
   gulp.src('.')
     .pipe(webserver({
@@ -158,7 +157,6 @@ gulp.task('watch', function() {
       host: "0.0.0.0",
       port: 8080
     }));
-  */
 
   // Watch .scss files
   gulp.watch([ paths.src_css_fe + '**/*.scss'], gulp.series('styles:v', 'styles'));
