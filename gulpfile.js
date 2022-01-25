@@ -132,6 +132,7 @@ gulp.task('copyfonts', function () {
 gulp.task('copyjs', function () {
     return gulp.src([
         './node_modules/foundation-sites/dist/js/foundation.min.js',
+        './node_modules/foundation-sites/dist/js/foundation.min.js.map',
         './node_modules/owl.carousel/dist/owl.carousel.min.js',
         './node_modules/jquery/dist/jquery.min.js',
         //'./node_modules/waypoints/lib/jquery.waypoints.min.js',
