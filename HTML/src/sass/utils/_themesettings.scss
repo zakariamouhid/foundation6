@@ -113,7 +113,7 @@ $fa:				'FontAwesome';
 .gradient-a-95 {
 	@include linear-gradient(
 		142deg
-		, rgb(137 126 229 / 95%), rgb(105 119 225));
+		, rgba(137, 126, 229, 0.95), rgb(105, 119, 225));
 }
 .gradient-a-100 {
 	@include linear-gradient(142deg,rgba(215, 0, 39, 1), rgba(115, 0, 165, 1));

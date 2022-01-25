@@ -11,9 +11,9 @@
     "clean-css": "^4.1.7",
     "del": "^3.0.0",
     "font-awesome": "^4.7.0",
-    "foundation-sites": "^6.4.3",
+    "foundation-sites": "^6.4.1",
     "globule": "^1.2.0",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-cache": "^1.1.3",
     "gulp-clean-css": "^3.7.0",
@@ -53,12 +53,16 @@
     "gulp-rigger": "^0.5.8",
     "gulp-uglify": "^3.0.0",
     "headroom.js": "^0.9.4",
+    "jquery": "^3.6.0",
     "jshint": "^2.9.5",
     "minimatch": "^3.0.4",
     "motion-ui": "^1.2.3",
+    "node-sass": "^7.0.1",
+    "notify-send": "^0.1.2",
     "owl.carousel": "^2.2.0",
     "through2": "^2.0.3",
     "waypoints": "^4.0.1"
   },
-  "main": "index.js"
+  "main": "index.js",
+  "browserslist": ["last 2 version"]
 }
