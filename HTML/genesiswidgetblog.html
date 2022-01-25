@@ -62,38 +62,64 @@
 				</div>
 			</header><!-- #masthead .site-header -->
 
-	<!-- Teaser -->
-	<section class="grid-y teaser" style="background-image: url('assets/images/officedark.jpg'); min-height: 40vh;">
-		<div class="cell auto gradient-f-85">
-			<div class="teaser-content heading" style="padding-top: 16vh;">
-				<!-- Post Title -->
-				<h1 class="text-center">Contact</h1>
-	
-			</div>
-		</div>
-	</section><!-- Teaser -->
-
+			<!-- Teaser -->
+			<article itemscope="" itemtype="https://schema.org/BlogPosting" class="single-post-article">	
+				<section class="grid-y teaser" style="background-image: url('assets/images/officedark.jpg'); min-height: 60vh;">
+					<div class="cell auto gradient-a-75">
+						<div class="teaser-content heading" style="padding-top: 20vh;">
+							<!-- Publication date -->
+							<p class="publication-date text-center">
+								<time datetime="2017-04-25T19:02:42+00:00">September 24, 2021</time>
+							</p>
+							<!-- Post Title -->
+							<h1 class="text-center">How to add additional footer widgets to any Genesis theme
+                            </h1>
+							<!-- Post Category -->
+							<h3 class="category text-center">Wordpress Development</h3>
+							<!-- Post Author -->
+							<div class="author text-center">
+								<span data-tooltip aria-haspopup="true" class="avatar has-tip top" data-disable-hover="false" tabindex="2" title="By Jane James">
+									<a href="#"><img src="assets/images/general/Jane-James-48-1-bw-web.jpg" alt="Jane James"></a>
+								</span>
+							</div>
+							
+						</div>
+					</div>
+				</section><!-- Teaser -->
 
 				<div class="grid-container grid-container-padded">
 					<div class="grid-x grid-padding-x align-center">
-						<div class="cell medium-12 medium-centered">
+						<div class="cell medium-9 medium-centered">
 							<div class="article-body">
-	
-								<div class="grid-x align-center">
-									<div class="cell medium-9 medium-centered" style="margin-top: 3em">
-										<h4 class="subheader text-center">My greatest passion is to help business owners increase their web presence and sales. Do you think we’d be a good fit?</h4>
-									</div>
-								</div>
-								<br />
+    
+                                <h1>How to add additional footer widgets to any Genesis theme</h1>
+								<p class="lead">
+                                    So I was working on some updates for a client Megan Jordan and she wanted a fourth footer widget area added to her site for an acknowledgement to country. I built her site using the Genesis sample SCSS theme by Cobalt apps which by default comes with 3 footer widget areas. To add a fourth you have to find the template where the number of widget areas are declared, and modify it.</p>
+                                    
+                                    <h4>HOW TO ADD A FOURTH FOOTER WIDGET TO GENESIS SAMPLE</h4>
+
+                                    <p>1. In your admin dashboard go into appearance- theme editor – config – theme supports.php and scroll down to the rule for genesis-footer-widgets and change it from 3, to 4.<br></br> 
+                                    <img src="assets/images/blog/4widgetarea.png" alt="CPT template"><br /><br />
+                                    <p>2. Go into your style.css sheet from the theme file directory, and edit the footer-widget-area section on line 1726. Change it from width: calc(100%/3) to width: calc(100%/4)</p>
+                                    <img src="assets/images/blog/3to4genesis.png" alt="CPT template"><br /><br />
+									<p>3. Now go into your appearance – widgets area, and you can see the 4th footer widget area is available in the widget options:</p>
+									<img src="assets/images/blog/customizergenesis.png" alt="CPT template"><br /><br />
+									<p>4. Now, go to the front end of your site and click on the customiser. Once you select widgets you can also see the 4th widget area here, and now you can add any element you want – text, html, image etc.</p>
+                                    <img src="assets/images/blog/widget4frontend.png" alt="CPT template"><br /><br />
+                                                <div class="sharethis-inline-share-buttons"></div><br /><br />
+												<p>There are much more complex ways to achieve this, but overall something simple effective and repeatable is the way to go. It saves the client development time, and it saves you from building even more custom functions on your WordPress project.</p>
+                                                <em>Alpha Omega Digital is a WordPress agency based in Melbourne, Australia but also services clients from Sydney, Brisbane, Newcastle, Perth, Adelaide, Darwin and Hobart. Have a project in mind? Contact me <a href="contact.html">here.</a></em>
+								
+
+			
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="_form_1"></div><script src="https://alphaomegadigital.activehosted.com/f/embed.php?id=1" type="text/javascript" charset="utf-8"></script>
+			</article>
+		</div><!-- #main -->
 
-			
-
-			<!-- Footer Section -->
+		<!-- Footer Section -->
 	<footer id="colophon" class="site-footer gradient-b-95 white-text-color" role="contentinfo">
 		<div class="site-info">
 			<div class="grid-container grid-container-padded">
@@ -179,6 +205,7 @@
 	</footer><!-- .site-footer -->
 	</div>
 	<!-- JavaScripts -->
+	<script src="assets/javascripts/vendor.min.js"></script>
 	<script src="assets/javascripts/main.min.js"></script>
 </body>
 </html>
