@@ -55,10 +55,10 @@ var autoprefixerOptions = {
 
 
 var paths = {
-     home: './HTML/',
-     assets_css: './HTML/assets/styles/',
-     assets_js: './HTML/assets/javascripts/',
-     assets_font: './HTML/assets/fonts/',
+     home: './dist/',
+     assets_css: './dist/assets/styles/',
+     assets_js: './dist/assets/javascripts/',
+     assets_font: './dist/assets/fonts/',
      src_css_fe: './HTML/src/sass/',
      src_js: './HTML/src/javascripts/',
      node_libs: ['./node_modules/foundation-sites/scss/', './node_modules/motion-ui/src'],
@@ -108,6 +108,20 @@ gulp.task('scripts', function() {
 });
 
 
+gulp.task('copyhtml', function () {
+  return gulp.src('./HTML/**/*.html')
+    .pipe(gulp.dest(paths.home))
+    // .pipe(notify({ message: 'Copy Fonts: <%= file.relative %>!' }));
+});
+
+gulp.task('copyimages', function () {
+  return gulp.src('./HTML/assets/images/**/*', {
+    base: 'HTML'
+  })
+    .pipe(gulp.dest(paths.home))
+    // .pipe(notify({ message: 'Copy Fonts: <%= file.relative %>!' }));
+});
+
 gulp.task('copyfonts', function () {
     return gulp.src('./node_modules/font-awesome/fonts/*')
       .pipe(gulp.dest(paths.assets_font))
@@ -142,30 +156,37 @@ gulp.task('default-fn', async function () {
 });
 
 // Default task
-gulp.task('default', gulp.series( 'clean', 'styles:v', 'styles', 'scripts', 'copyfonts', 'copyjs', 'default-fn' ));
+gulp.task('default', gulp.series( 'clean', 'styles:v', 'styles', 'scripts', 'copyfonts', 'copyjs', 'copyhtml', 'copyimages', 'default-fn' ));
 
 
 // Watch
 gulp.task('watch', function() {
   const webserver = require('gulp-webserver');
-  gulp.src('.')
+  gulp.src('dist')
     .pipe(webserver({
-      // path: 'HTML',
+      // path: 'dist',
       livereload: true,
       directoryListing: true,
       open: true,
       host: "0.0.0.0",
       port: 8080
     }));
-
+  
+  // init
+  gulp.series('default')();
+  
   // Watch .scss files
   gulp.watch([ paths.src_css_fe + '**/*.scss'], gulp.series('styles:v', 'styles'));
   // gulp.watch([ paths.src_css_fe + 'style.scss'], ['styles']);
 
   // Watch gulpfile files
-  gulp.watch('gulpfile.js', gulp.series('styles', 'styles:v', 'scripts', 'copyfonts', 'copyjs'));
+  // gulp.watch('gulpfile.js', gulp.series('styles', 'styles:v', 'scripts', 'copyfonts', 'copyjs'));
 
   // Watch .js files
   gulp.watch( paths.src_js + '*.js', gulp.series('scripts'));
+
+  gulp.watch( [ './HTML/**/*.html' ], gulp.series('copyhtml') );
+
+  gulp.watch( [ './HTML/assets/images/**/*' ], gulp.series('copyimages') );
 
 });
