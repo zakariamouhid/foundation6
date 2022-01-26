@@ -2177,7 +2177,9 @@ section.schedule .tabs-title a {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px; }
     section.schedule .tabs-title a:focus .day-number, section.schedule .tabs-title a[aria-selected='true'] .day-number {
-      color: #ba007d; }
+      color: linear-gradient(
+        142deg
+        , rgba(137, 126, 229, 0.95), rgb(105, 119, 225)); }
     section.schedule .tabs-title a:focus .date, section.schedule .tabs-title a[aria-selected='true'] .date {
       color: #888888; }
   @media screen and (max-width: 63.9375em) {

@@ -708,6 +708,7 @@ section.schedule {
 			font-size: 1.125rem;
 			font-weight: 400;
 			font-family: $FontPrimary;
+			
 
 			&:hover {
 				background: transparent;
@@ -723,7 +724,9 @@ section.schedule {
 				border-bottom-right-radius: 0px;
 				
 				.day-number {
-					color: #ba007d;
+					color: linear-gradient(
+						142deg
+						, rgba(137, 126, 229, 0.95), rgb(105, 119, 225));;
 				}
 
 				.date { 
