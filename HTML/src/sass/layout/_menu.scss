@@ -31,10 +31,12 @@ svg #Black path {
 		left: 0;
 		z-index: 9;
 		width: 100%;
+		
 	}
 
 	&.position-relative {
 		position: relative;
+		
 	}
 
 
@@ -45,6 +47,7 @@ svg #Black path {
 		
 		width: 100%;
 		z-index: 999999999999;
+		
 
 		@include mui-animation(slide($direction: down, $amount: 120%));
 		animation-duration: 1s;
@@ -52,6 +55,8 @@ svg #Black path {
 
 	&.border-bottom-white {
 		border-bottom: 1px solid rgba(255,255,255, 0.2);
+		
+		
 	}
 
 	

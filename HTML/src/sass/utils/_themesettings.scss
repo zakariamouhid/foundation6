@@ -102,10 +102,14 @@ $fa:				'FontAwesome';
 	@include linear-gradient(142deg,rgba(15, 14, 15, 0.75), rgba(0, 102, 204, 1));
 }
 .gradient-a-80 {
-	@include linear-gradient(142deg,rgba(215, 0, 39, 0.80), rgba(115, 0, 165, 0.80));
+	@include linear-gradient(
+		142deg
+		, rgba(137, 126, 229, 0.95), rgb(105, 119, 225));
 }
 .gradient-a-85 {
-	@include linear-gradient(142deg,rgba(215, 0, 39, 0.85), rgba(115, 0, 165, 0.85));
+	@include linear-gradient(
+		142deg
+		, rgba(137, 126, 229, 0.95), rgb(105, 119, 225));
 }
 .gradient-a-90 {
 	@include linear-gradient(142deg,rgba(215, 0, 39, 0.90), rgba(115, 0, 165, 0.90));

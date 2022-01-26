@@ -165,7 +165,9 @@ Last Update: 08/09/2017 (d/m/y);
   background: linear-gradient(142deg, rgba(215, 0, 39, 0.75), rgba(115, 0, 165, 0.75)); }
 
 .gradient-a-80 {
-  background: linear-gradient(142deg, #9c60b7, #1779ba); }
+  background: linear-gradient(
+			142deg
+			, rgba(137, 126, 229, 0.95), rgb(105, 119, 225)); }
 
 .gradient-a-85 {
   background: linear-gradient(142deg, rgba(215, 0, 39, 0.85), rgba(115, 0, 165, 0.85)); }

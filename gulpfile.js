@@ -173,7 +173,7 @@ gulp.task('watch', function() {
         // directoryListing: true,
         open: true,
         host: "localhost",
-        port: 8080,
+        port: 8000,
         fallback: '404.html',
       }));
   });
